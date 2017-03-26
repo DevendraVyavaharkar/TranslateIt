@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/gerback"
+    android:alpha="0.9"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/translateWordGer"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:inputType="textNoSuggestions"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:textSize="35sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="250px"
+        android:minEms="10"/>
+
+    <Button
+        android:text="Translate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_marginTop="20px"
+        android:backgroundTint="@android:color/holo_orange_dark"
+        android:elevation="0dp" />
+
+    <TextView
+        android:id="@+id/textViewGerman"
+        android:text="Guten Morgen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70px"
+        android:layout_marginRight="70px"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:background="#FFFFFF"
+        android:textColor="#000000"
+        android:alpha="0.7"
+        android:layout_marginTop="70px"
+        android:layout_gravity="center"
+        android:minLines="5"/>
+
+    <Button
+        android:id="@+id/addg"
+        android:text="Add Words"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100px"
+        android:layout_marginRight="20px"
+        android:layout_gravity="end"
+        android:onClick="addWords"/>
+</LinearLayout>

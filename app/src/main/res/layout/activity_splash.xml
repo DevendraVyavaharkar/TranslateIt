@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:layout_weight="3">
+
+
+    <ImageView
+        android:layout_weight="1"
+        android:id="@+id/imgLogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="50dp"
+        android:src="@drawable/splash" />
+
+    <TextView
+        android:id="@+id/splashName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="55dp"
+        android:gravity="center_horizontal"
+        android:textSize="25dp"
+        android:textColor="@android:color/holo_green_light"
+        android:layout_alignParentBottom="true"
+        android:text="DEVENDRA VYAVAHARKAR" />
+</LinearLayout>
