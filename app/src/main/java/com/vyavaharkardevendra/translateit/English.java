@@ -32,47 +32,45 @@ public class English extends Activity{
         EditText edit=(EditText)findViewById(R.id.translateWordEng);
         String[] eng=edit.getText().toString().split("\n");
 
-        TextView txt = (TextView)findViewById(R.id.textViewEnglish);
-        //String str=txtvw.getText().toString();
-
-        //SQLiteDatabase sqlDB = openOrCreateDatabase("db123", MODE_PRIVATE, null);
-        //Cursor findTimes = sqlDB.rawQuery("SELECT meaning FROM GERMAN WHERE word LIKE '" + eng + "';", null);
-        SQLiteOpenHelper translatedbhelper =new TranslateDatabaseHelper(this);
-        SQLiteDatabase db= translatedbhelper.getReadableDatabase();
-
-        Cursor cursor=db.query("GERMAN",
-                new String[] {"MEANING"},
-                "WORD=?",
-                eng,
-                null,null,null);
-
-        String translation=new String();
-        if(cursor.moveToFirst())
-                translation=cursor.getString(0);
-        else
+        if(eng[0].trim().length()==0)
         {
-            Toast toast = Toast.makeText(this,"No Records Found!!",Toast.LENGTH_SHORT);
+            Toast toast=Toast.makeText(this,"Please Enter Word",Toast.LENGTH_SHORT);
             toast.show();
         }
-        txt.setText(translation);
-        cursor.close();
-        db.close();
-     /*   try
+        else
         {
-               // String meaning = findTimes.getString(findTimes.getColumnIndex("meaning"));
-                Toast toast = Toast.makeText(this, "reached here", Toast.LENGTH_SHORT);
-                toast.show();
-                //txtvw.setText(meaning);
-            }
-            catch(Exception e)
+            //eng.replace("\\s+$","");                         // To remove unwanted whitespaces at the end of the input
+            //eng.toLowerCase(Locale.ENGLISH);
+            TextView txt = (TextView)findViewById(R.id.textViewEnglish);
+
+            SQLiteOpenHelper translatedbhelper =new TranslateDatabaseHelper(this);
+            SQLiteDatabase db= translatedbhelper.getReadableDatabase();
+
+            Cursor cursor=db.query("GERMAN",
+                    new String[] {"MEANING"},
+                    "WORD=?",
+                    eng,
+                    null,null,null);
+
+            String translation=new String();
+            if(cursor!=null && cursor.moveToFirst())
             {
-                Toast toast = Toast.makeText(this,e.toString(), Toast.LENGTH_SHORT);
+                while(cursor.moveToNext()) {
+                    translation = cursor.getString(0);
+                    txt.setText(translation);
+                }
+                Toast toast = Toast.makeText(this,"Record Found",Toast.LENGTH_SHORT);
+                toast.show();
+            }
+            else
+            {
+                Toast toast = Toast.makeText(this,"No Record Found",Toast.LENGTH_SHORT);
                 toast.show();
             }
 
-            //findTimes.close();
-            //sqlDB.close();
+            cursor.close();
+            db.close();
+        }
 
-      */
     }
 }

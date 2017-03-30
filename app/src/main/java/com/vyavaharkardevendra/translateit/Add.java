@@ -47,23 +47,16 @@ public class Add extends Activity {
            {
                 TranslateDatabaseHelper translatedbhelper = new TranslateDatabaseHelper(this);
                 SQLiteDatabase db= translatedbhelper.getWritableDatabase();
-              //  Toast toast=Toast.makeText(this,"Step1",Toast.LENGTH_SHORT);
-              //  toast.show();
+
                 translatedbhelper.insertTranslation(db,words,meanings,"ENGLISH");
 
-
-               //SQLiteDatabase sqlDB = openOrCreateDatabase("db123",MODE_PRIVATE,null);
-               //sqlDB.execSQL("CREATE TABLE IF NOT EXISTS ENGLISH (word varchar(20),meaning varchar(30))");
-               //Toast toast=Toast.makeText(this,"Record!",Toast.LENGTH_SHORT);
-               //toast.show();
-               //sqlDB.execSQL("INSERT INTO ENGLISH(word,meaning) VALUES('"+words+"','"+meanings+"');");
-               Toast toast1=Toast.makeText(this,"English Word Successfully Added!!",Toast.LENGTH_SHORT);
-               toast1.show();
+                Toast toast1=Toast.makeText(this,"English Word Successfully Added",Toast.LENGTH_SHORT);
+                toast1.show();
            }
            catch (Exception e)
            {
-               Toast toast=Toast.makeText(this,e.toString(),Toast.LENGTH_SHORT);
-               toast.show();
+                Toast toast=Toast.makeText(this,e.toString(),Toast.LENGTH_SHORT);
+                toast.show();
            }
         }
 
@@ -71,15 +64,10 @@ public class Add extends Activity {
         {
             try
             {
-                //TranslateDatabaseHelper translatedbhelper = new TranslateDatabaseHelper(this);
-                //SQLiteDatabase db= translatedbhelper.getWritableDatabase();
-                //translatedbhelper.insertTranslation(db,words,meanings,"GERMAN");
-                Toast toast1=Toast.makeText(this,"Record!",Toast.LENGTH_SHORT);
-                toast1.show();
-                SQLiteDatabase sqlDB = openOrCreateDatabase("db123",MODE_PRIVATE,null);
-                sqlDB.execSQL("CREATE TABLE IF NOT EXISTS GERMAN (word varchar(20),meaning varchar(30))");
-                sqlDB.execSQL("INSERT INTO GERMAN(word,meaning) VALUES('"+words+"','"+meanings+"')");
-                Toast toast=Toast.makeText(this,"German Word Successfully Added !!",Toast.LENGTH_SHORT);
+                TranslateDatabaseHelper translatedbhelper = new TranslateDatabaseHelper(this);
+                SQLiteDatabase db= translatedbhelper.getWritableDatabase();
+                translatedbhelper.insertTranslation(db,words,meanings,"GERMAN");
+                Toast toast=Toast.makeText(this,"German Word Successfully Added",Toast.LENGTH_SHORT);
                 toast.show();
             }
             catch (Exception e)

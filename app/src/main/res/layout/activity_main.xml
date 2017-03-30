@@ -14,24 +14,45 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/english"
-        android:layout_marginTop="12dp"
-        android:id="@+id/imageButton"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:contentDescription="@string/ger2eng"
-        android:onClick="translateToEnglish"/>
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         app:srcCompat="@drawable/german"
         android:id="@+id/imageButton2"
         android:layout_marginBottom="39dp"
+        android:padding="0dp"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/imageButton"
         android:layout_alignEnd="@+id/imageButton"
         android:contentDescription="@string/eng2ger"
-        android:onClick="translateToGerman"/>
+        android:onClick="translateToGerman"
+        android:elevation="19dp" />
+
+    <TextView
+        android:text="German to English Translation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:id="@+id/textView" />
+
+    <TextView
+        android:text="English to German Translation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView2" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/english"
+        android:layout_marginTop="17dp"
+        android:padding="0dp"
+        android:id="@+id/imageButton"
+        android:contentDescription="@string/ger2eng"
+        android:onClick="translateToEnglish"
+        android:elevation="19dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
