@@ -30,10 +30,10 @@ public class English extends Activity{
     public void toEnglish(View view)
     {
         EditText edit=(EditText)findViewById(R.id.translateWordEng);
-        String eng=edit.getText().toString();
+        String[] eng=edit.getText().toString().split("\n");
 
-        TextView txtvw = (TextView)findViewById(R.id.textViewEnglish);
-        String str=txtvw.getText().toString();
+        TextView txt = (TextView)findViewById(R.id.textViewEnglish);
+        //String str=txtvw.getText().toString();
 
         //SQLiteDatabase sqlDB = openOrCreateDatabase("db123", MODE_PRIVATE, null);
         //Cursor findTimes = sqlDB.rawQuery("SELECT meaning FROM GERMAN WHERE word LIKE '" + eng + "';", null);
@@ -43,11 +43,21 @@ public class English extends Activity{
         Cursor cursor=db.query("GERMAN",
                 new String[] {"MEANING"},
                 "WORD=?",
-                new String[] {eng},
+                eng,
                 null,null,null);
 
-
-        try
+        String translation=new String();
+        if(cursor.moveToFirst())
+                translation=cursor.getString(0);
+        else
+        {
+            Toast toast = Toast.makeText(this,"No Records Found!!",Toast.LENGTH_SHORT);
+            toast.show();
+        }
+        txt.setText(translation);
+        cursor.close();
+        db.close();
+     /*   try
         {
                // String meaning = findTimes.getString(findTimes.getColumnIndex("meaning"));
                 Toast toast = Toast.makeText(this, "reached here", Toast.LENGTH_SHORT);
@@ -62,5 +72,7 @@ public class English extends Activity{
 
             //findTimes.close();
             //sqlDB.close();
+
+      */
     }
 }
