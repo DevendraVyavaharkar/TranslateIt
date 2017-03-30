@@ -2,4 +2,8 @@
     <string name="app_name">Translate It</string>
     <string name="eng2ger">English to German</string>
     <string name="ger2eng">German to English</string>
+    <string-array name="addOption">
+        <item>English Word</item>
+        <item>German Word</item>
+    </string-array>
 </resources>

@@ -16,7 +16,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity"
+            android:label="Starting Layout for the App">
+        </activity>
         <activity android:name=".German"
             android:label="English to German">
         </activity>
@@ -28,6 +30,7 @@
         <activity android:name=".Add"
             android:label="Add New Words">
         </activity>
+
     </application>
 
 </manifest>

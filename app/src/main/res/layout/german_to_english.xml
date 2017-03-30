@@ -15,21 +15,21 @@
         android:textSize="35sp"
         android:layout_gravity="center"
         android:layout_marginTop="250px"
-        android:minEms="10"/>
+        android:minEms="7"/>
 
     <Button
+        android:id="@+id/buttonEng"
         android:text="Translate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button"
         android:layout_gravity="center_horizontal|center_vertical"
         android:layout_marginTop="20px"
         android:backgroundTint="@android:color/holo_orange_dark"
-        android:elevation="0dp" />
+        android:elevation="10dp"
+        android:onClick="toEnglish"/>
 
     <TextView
         android:id="@+id/textViewEnglish"
-        android:text="Good Morning"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="70px"
